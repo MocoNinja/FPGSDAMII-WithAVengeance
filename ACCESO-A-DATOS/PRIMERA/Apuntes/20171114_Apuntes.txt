@@ -1,0 +1,27 @@
+Declaramos un objeto de la clase CineDbContext.
+Ahora lo que tenemos que hacer es ir añadiendo los datos al GridView sacandolos de la base de datos.
+
+GridView.DataSource=    from Personaje in CineDbContext.Actores
+                        from Peli in Personaje.SusPeliculas [1]
+                        select new  { [2]
+                            Nombre_Actor = Personajes.Nombre,
+                            Apellidos_Actor = Personajes.Apellidos,
+                            Titulo_Pelicula = Peli.Titulo
+                        };
+
+
+--------------------------< CineDbContext >--------------------------
+protected override void OnModelCreating(DbModelBuilder modelBuilder)    [3]
+{ 
+    modelBuilder.Entity<Actor>().
+    base.OnModelCreating(modelBuilder);
+}
+---------------------------------------------------------------------
+
+[1] Así lo que se logra es relacionar pasando de la tabla Actores en la base de datos a la lista Actor
+y luego de la tabla Personaje.SusPeliculas los volcamos a la lista. **RELACIÓN DE TABLAS**
+
+[2] Ahora seleccionamos las columnas que queremos que aparezcan en el GridView junto con 
+el contenido que queremos que aparezca (Nombre_Actor --> título | Personajes.Nombre --> contenido)
+
+[3] 

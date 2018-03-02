@@ -1,0 +1,25 @@
+Create procedure getVehiculosPorColor
+@ColorSel nvarchar(30)
+AS
+BEGIN
+	SELECT MarcaModeloes.Nom_marca, SerieModeloes.Nom_Serie, Automovils.Matricula, Automovils.Color
+	FROM Automovils
+	JOIN SerieModeloes
+	ON Automovils.SerieID = SerieModeloes.ID
+	JOIN MarcaModeloes
+	ON  MarcaModeloes.ID = SerieModeloes.MarcaID
+	WHERE Automovils.Color = @ColorSel
+
+END
+
+
+Create procedure getSeriesVehiculos
+AS
+BEGIN
+	Select MarcaModeloes.Nom_marca, SerieModeloes.Nom_Serie, Automovils.Matricula, Automovils.Color
+	FROM Automovils
+	JOIN SerieModeloes
+	ON Automovils.SerieID = SerieModeloes.ID
+	JOIN MarcaModeloes
+	ON SerieModeloes.MarcaID = MarcaModeloes.ID
+END

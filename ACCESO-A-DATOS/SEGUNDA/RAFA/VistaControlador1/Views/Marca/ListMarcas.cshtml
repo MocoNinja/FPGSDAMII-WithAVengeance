@@ -1,0 +1,30 @@
+﻿@model IEnumerable<VistaControlador1.Models.MarcaModelo>
+
+<h2>LISTADO DE LAS MARCAS</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nom_marca)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <!--Le pasamos el metodo, controlador y el codigo de la marca, por ultimo se le pasa un atr html o null-->
+        <td>
+            @Html.ActionLink(item.Nom_marca, "List", "SerieModelo", new {marcaID = item.ID}, null)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

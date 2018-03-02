@@ -1,0 +1,28 @@
+﻿@using VistaControlador1.Models;
+@{
+    ViewBag.Title = "Desplegable";
+}
+
+<h2>Desplegable a mano</h2>
+<!--Al drop se el pasa primero el id y despues el name, despues se le pasa una lista, la clase es para que permita seleccionar  -->
+@Html.DropDownList("LasMarcas", new List<SelectListItem>
+{
+    new SelectListItem { Text = "Opel", Value = "1", Selected = true},
+    new SelectListItem { Text = "Ferrary", Value = "2"},
+    new SelectListItem { Text = "Mercedes", Value = "3"}
+}, "Selecciona marca")
+
+
+<h2>Desplegable cogiendo los datos de la base </h2>
+<!--La lista se crea en el controlador-->
+<!--Primero se le pasa el ViewBag y segundo la descripcion-->
+@Html.DropDownList("Marcas", "Selecciona marca")
+
+<h2>Desplegable cogiendo los datos de la base con una lista normal</h2>
+<select id="Marca" name="Marca">
+    @foreach(MarcaModelo m in ViewBag.Marcas2)
+    {
+        <option value="@m.ID">@m.Nom_marca</option>
+    }
+</select>
+

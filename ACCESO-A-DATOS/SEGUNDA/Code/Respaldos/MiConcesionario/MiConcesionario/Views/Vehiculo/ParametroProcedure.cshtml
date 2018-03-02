@@ -1,0 +1,30 @@
+﻿@model IEnumerable<MiConcesionario.Controllers.VehiculoController.VehiculoTotal>
+
+
+
+<h2>ResumenProcedure</h2>
+<form method="get">
+    @Html.DropDownList("color")
+    <button type="submit">Buscar</button>
+</form>
+<table>
+    <thead>
+        <tr>
+            <th>Matricula</th>
+            <th>Color</th>
+            <th>Serie</th>
+            <th>Marca</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (MiConcesionario.Controllers.VehiculoController.VehiculoTotal Dato in Model)
+        {
+            <tr>
+                <td>@Dato.Matricula</td>
+                <td>@Dato.Color</td>
+                <td>@Dato.NombreMarca</td>
+                <td>@Dato.NombreSerie</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,56 @@
+﻿@using MVCInicial.Models;
+
+@{ // NO pueden estar en línea distinta
+    ViewBag.Title = "Desplegable";
+}
+
+<h2>Desplegable</h2>
+
+<!-- Vamos a crear un select con el helper. Un select no es más que un DropDownList -->
+<!-- Habrá que generar los Item de la lista (SelectListItem) -->
+<!-- Hay que ponerle id (para dentro, el JS), y el name (para fuera, el POST) -->
+
+<!-- Lo primero que se ejecuta al cargar la página es el método del controlador
+     Ahora queremos acceder a la base de datos, así que tenemos que incorporar
+     ese código en el método del controlador
+     -->
+
+
+
+<!-- Lista creada aquí a mano -->
+@Html.DropDownList("LasMarcas", new List<SelectListItem>
+    {
+    // Se instancian sobre la marcha
+    new SelectListItem
+    {
+        Text  = "Vauxhall",  // lo que se va a ver
+        Value = "6",     // el valor
+        Selected = true  // seleccionado por defecto o no
+    },
+    new SelectListItem
+    {
+        Text  = "Ferrari",  // lo que se va a ver
+        Value = "5",        // el valor
+        Selected = false    // seleccionado por defecto o no
+    },
+    new SelectListItem
+    {
+        Text  = "Mercedes",  // lo que se va a ver
+        Value = "4",         // el valor
+        Selected = false    // seleccionado por defecto o no
+    }
+
+    },"Selecciona Marca" // Texto de ayuda si no hay nada seleccionado
+)
+
+<!-- Listas que vienen del método del controlador -->
+
+<!-- Este marcas pone los nombres y lo coge del ViewBag -->
+@Html.DropDownList("Marcas", "Selecciona Marcas")
+
+<select name="Lista2" id="Lista2">
+    @foreach(Marca mm in ViewBag.ListaMarcas)
+    {
+        <option value="@mm.Id">@mm.Nombre</option>
+    }
+</select>

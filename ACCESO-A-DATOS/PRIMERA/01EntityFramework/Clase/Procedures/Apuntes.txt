@@ -1,0 +1,23 @@
+Nuevo proyecto: Nueva webform
+El de los procedimientos, pero todo con clases y codigo C#
+
+Alumno: la lógica, la que tiene datos
+DBContext: covierte alumnos a base de datos
+	-> hay que importat System.Data.Entity
+	-> He tenido que agregar el objeto de dato
+DBSet: para teabajr con tablas
+
+Vamos a sobrescribir un metodo que ya existe en alumnodb contrxt: el metodo
+que se usa para crear el modelo en el sql server
+Vamos a querer que al ejecutar el formulario, si no existe la bbdd se crea; y si existe, que trabaje con ella nise
+
+De momento *NO* profundizamos en la teoria, solo la usamos.
+OnModelCreating: evento que se llama al crear al modelo.
+	-> dbmodelbuilder: es el objeto de la bbdd; es lo que convierte la bbdd en 	el objeto de dbcontext
+
+repositorio: CLASE para guardar metodos
+
+AlumnoRepositorio: vamos a hacer el metodo getAlumnos
+	-> devuelve un list de alumno, accediendo a la base de datos
+
+Una vez creado la mierda, hay que meter el gridview, el details view y OBJECT datasource

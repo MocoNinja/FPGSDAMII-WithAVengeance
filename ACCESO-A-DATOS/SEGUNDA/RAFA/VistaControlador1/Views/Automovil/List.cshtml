@@ -1,0 +1,29 @@
+﻿@model VistaControlador1.Models.SerieModelo
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<h2 style="text-align: center">@Html.DisplayName(Model.Nom_Serie)</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Auto")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.Automoviles) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Matricula)
+            @Html.DisplayFor(modelItem => item.Color)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

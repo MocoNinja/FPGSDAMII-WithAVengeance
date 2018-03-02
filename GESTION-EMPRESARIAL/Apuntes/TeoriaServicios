@@ -1,0 +1,22 @@
+1) Abrir un programa con GUI y que deje la terminal:
+	comando &
+	ctrl Z para suspender la tarea
+	fg -> Retorna la tarea
+	bg -> Manda el comando a segundo plano para que se siga ejecutando y a la vez poder usar la terminal
+
+	jobs: Lista las tareas que están (en un array que empieza el 1) -> Pueden usarse comandos del estilo #2
+
+
+2) Puertos:
+Mysql:3306
+Oracle:1521
+Postgre:5432
+
+
+3)
+sudo lsof -i :puerto -> da info de lo que hay en ese puerto
+
+4) Listar servicios 
+sudo service servicio status
+service --status-all
+Mirar diferencias: https://juncotic.com/comandos-sysvinit-vs-comandos-systemd/

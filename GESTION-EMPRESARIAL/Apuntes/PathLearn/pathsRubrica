@@ -1,0 +1,6 @@
+Por defecto, en Ubuntu, el path está en: /etc/environment
+Acabo de ver que en /etc/profile.d hay varias cosas que modifican el path
+
+Java 8:
+java-8-oracle/bin /usr/lib/jvm/java-8-oracle/db/bin /usr/lib/jvm/java-8-oracle/jre/bin
+

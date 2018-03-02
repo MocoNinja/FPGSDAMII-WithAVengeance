@@ -1,0 +1,49 @@
+Relaciones n:n
+
+Relacionaremos actores con peliculas
+
+Es una relacion n a n, porque un actor sale en muchas peliculas y en una pelicula sale muchos actores. En consecuencia, sale una tabla intermedia. Vamos a hacer que la tabla salga sola.
+No vamos a tocar el sql server, vamos a hacer todo con C#
+
+Partimos del antiguo proyecto
+
+Nueva clae pelicula:
+
+public class Pelicula
+{
+	public int ID {get; set;}
+	public string Titulo {get; set;}
+	public string CartelFoto {get; set;}
+	public IList<Actor> Actores {get; set;}
+}
+
+public class Actor
+{
+	public int ID {get; set;}
+	public string Nombre {get; set;}
+	public string Apellidos {get; set;}
+	[ForeignKey("PaisID")]
+	public Pais Pais {get; set;}
+	public IList<Pelicula> SusPeliculas {get; set;}
+}
+
+public class CineDBContext : DbContext
+{
+	public DbSet<Actor>  {get; set;}
+	public DbSet<Pelicula> Peliculas {get; set;}
+	public DbSet<Pais> Paises {get; set;}
+}
+
+
+Se ha creado la tabla intermedia sola
+
+
+Metemos datos
+
+Metemos una pagina web
+
+Ha explicado lo de ver codigo cs del aspx
+
+Normalmente tenemos el DataSource y DataSourceID para poner el origen de los datos.
+Hasta ahora lo que haciamos era poner un objeto y usar el DSID para referenciarla.
+Con el DataSource podemos darle una lista con los datos; podemos trabajar con esto desde CSharp

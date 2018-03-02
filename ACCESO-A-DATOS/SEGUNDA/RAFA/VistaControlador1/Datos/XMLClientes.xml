@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<clientes>
+  <cliente>
+    <nif>11111111S</nif>
+    <apellidos>Abad Lacueva</apellidos>
+    <nombre>Diego</nombre>
+    <direccion>C/. Delicias Nº 3 - Zaragoza</direccion>
+    <provincia>50</provincia>
+  </cliente>  
+  <cliente>
+    <nif>22222222S</nif>
+    <apellidos>Abril Cedillo</apellidos>
+    <nombre>Lydia</nombre>
+    <direccion>C/. Mª Auxiliadora Nº 23 - Zaragoza</direccion>
+    <provincia>50</provincia>
+  </cliente>  
+  <cliente>
+    <nif>33333333S</nif>
+    <apellidos>Aguilar López</apellidos>
+    <nombre>Iñaki</nombre>
+    <direccion>Avd. Madrid Nº 65 - Zaragoza</direccion>
+    <provincia>50</provincia>
+  </cliente>
+  <cliente>
+    <nif>44444444Y</nif>
+    <apellidos>Angel Pablo</apellidos>
+    <nombre>Daniel</nombre>
+    <direccion>C/. San Rafael Nº 35 - Daroca</direccion>
+    <provincia>50</provincia>
+  </cliente> 
+  <cliente>
+    <nif>55555555A</nif>
+    <apellidos>Ascaso Ruiz</apellidos>
+    <nombre>Isabel</nombre>
+    <direccion>C/. García Sánchez Nº 22 - Zaragoza</direccion>
+    <provincia>50</provincia>
+  </cliente>  
+</clientes>

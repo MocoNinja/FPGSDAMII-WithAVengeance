@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Parchís</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+	 crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+	 crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+	 crossorigin="anonymous"></script>
+	<style>
+		div {
+			border: 1px solid black;
+		}
+
+		.verdonas {
+			background-color: green;
+			color: green;
+		}
+
+		.rojonas {
+			background-color: red;
+			color: red;
+		}
+
+		.amarillonas {
+			background-color: yellow;
+			color: yellow;
+		}
+
+		.azulonas {
+			background-color: blue;
+			color: blue;
+		}
+
+		.cuadrau {
+			height: 94px;
+		}
+
+		.girau-180 {
+			-ms-transform: rotate(180deg);
+			/* IE 9 */
+			-webkit-transform: rotate(180deg);
+			/* Chrome, Safari, Opera */
+			transform: rotate(180deg);
+		}
+
+		.girau-90 {
+			-ms-transform: rotate(90deg);
+			/* IE 9 */
+			-webkit-transform: rotate(90deg);
+			/* Chrome, Safari, Opera */
+			transform: rotate(90deg);
+			height: 20px;
+			width: 20px;
+		}
+
+		.girau-270 {
+			-ms-transform: rotate(270deg);
+			/* IE 9 */
+			-webkit-transform: rotate(270deg);
+			/* Chrome, Safari, Opera */
+			transform: rotate(270deg);
+		}
+
+		.girao{
+			height: 220px
+		}
+
+		td {
+			border: 1px solid black;
+			width: 220px !important;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+
+		<!-- FILA INICIAL: BEGIN -->
+		<div class="row">
+			<div class="col-4">
+				<div class="row rojonas">
+					<div class="col-12">
+						<div class="row">
+							<div class="col-6 cuadrau"></div>
+							<div class="col-6 cuadrau"></div>
+						</div>
+						<div class="row">
+							<div class="col-6 cuadrau"></div>
+							<div class="col-6 cuadrau"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="row girau-180">
+					<div class="col-4">33</div>
+					<div class="col-4">34</div>
+					<div class="col-4">35</div>
+				</div>
+				<div class="row girau-180">
+					<div class="col-4">32</div>
+					<div class="col-4 rojonas">A</div>
+					<div class="col-4">36</div>
+				</div>
+				<div class="row girau-180">
+					<div class="col-4">31</div>
+					<div class="col-4 rojonas">A</div>
+					<div class="col-4">37</div>
+				</div>
+				<div class="row girau-180">
+					<div class="col-4">30</div>
+					<div class="col-4 rojonas">A</div>
+					<div class="col-4">38</div>
+				</div>
+				<div class="row girau-180">
+					<div class="col-4">29</div>
+					<div class="col-4 rojonas">A</div>
+					<div class="col-4">39</div>
+				</div>
+				<div class="row girau-180">
+					<div class="col-4">28</div>
+					<div class="col-4 rojonas">A</div>
+					<div class="col-4">40</div>
+				</div>
+				<div class="row girau-180">
+					<div class="col-4">27</div>
+					<div class="col-4 rojonas">A</div>
+					<div class="col-4">41</div>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="row azulonas">
+					<div class="col-4">
+					</div>
+					<div class="col-12">
+						<div class="row">
+							<div class="col-6 cuadrau">A</div>
+							<div class="col-6 cuadrau">A</div>
+						</div>
+						<div class="row">
+							<div class="col-6 cuadrau"></div>
+							<div class="col-6 cuadrau"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- FILA INICIAL: END -->
+		<!-- FILA MEDIA: BEGIN -->
+		<div class="row">
+				<div class="col-4">
+					<div class="row">
+						<div class="col-12">
+							<center>
+								<table class="girao">
+									<tr>
+										<td class="girau-90">50</td>
+										<td class="girau-90">49</td>
+										<td class="girau-90">48</td>
+										<td class="girau-90">47</td>
+										<td class="girau-90">46</td>
+										<td class="girau-90">45</td>
+										<td class="girau-90">44</td>
+									</tr>
+									<tr class="verdonas">
+										<td class="girau-90" style="color:black">51</td>
+										<td class="girau-90">1</td>
+										<td class="girau-90">2</td>
+										<td class="girau-90">3</td>
+										<td class="girau-90">4</td>
+										<td class="girau-90">5</td>
+										<td class="girau-90">6</td>
+									</tr>
+									<tr>
+										<td class="girau-90">52</td>
+										<td class="girau-90">53</td>
+										<td class="girau-90">54</td>
+										<td class="girau-90">55</td>
+										<td class="girau-90">56</td>
+										<td class="girau-90">57</td>
+										<td class="girau-90">58</td>
+									</tr>
+								</table>
+							</center>
+						</div>
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="row">
+						<div class="col-12">
+							<center>
+								<img src="./trampa.png" />
+							</center>
+	
+						</div>
+					</div>
+				</div>
+				<div class="col-4">
+					<table class="girao">
+						<tr>
+							<td class="girau-270">24</td>
+							<td class="girau-270">23</td>
+							<td class="girau-270">22</td>
+							<td class="girau-270">21</td>
+							<td class="girau-270">20</td>
+							<td class="girau-270">19</td>
+							<td class="girau-270">18</td>
+						</tr>
+						<tr class="azulonas">
+							<td class="girau-270">a</td>
+							<td class="girau-270">2</td>
+							<td class="girau-270">3</td>
+							<td class="girau-270">4</td>
+							<td class="girau-270">4</td>
+							<td class="girau-270">5</td>
+							<td class="girau-270" style="color:black">17</td>
+						</tr>
+						<tr>
+							<td class="girau-270">10</td>
+							<td class="girau-270">11</td>
+							<td class="girau-270">12</td>
+							<td class="girau-270">13</td>
+							<td class="girau-270">14</td>
+							<td class="girau-270">15</td>
+							<td class="girau-270">16</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<!-- FILA MEDIA: END -->
+	
+		<!-- FILA FINAL: BEGIN -->
+		<div class="row ">
+			<div class="col-4">
+				<div class="row verdonas">
+					<div class="col-12">
+						<div class="row">
+							<div class="col-6 cuadrau"></div>
+							<div class="col-6 cuadrau"></div>
+						</div>
+						<div class="row">
+							<div class="col-6 cuadrau"></div>
+							<div class="col-6 cuadrau"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="row">
+					<div class="col-4">61</div>
+					<div class="col-4 amarillonas">A</div>
+					<div class="col-4">7</div>
+				</div>
+				<div class="row">
+					<div class="col-4">62</div>
+					<div class="col-4 amarillonas">A</div>
+					<div class="col-4">6</div>
+				</div>
+				<div class="row">
+					<div class="col-4">63</div>
+					<div class="col-4 amarillonas">A</div>
+					<div class="col-4">5</div>
+				</div>
+				<div class="row">
+					<div class="col-4">64</div>
+					<div class="col-4 amarillonas">A</div>
+					<div class="col-4">4</div>
+				</div>
+				<div class="row">
+					<div class="col-4">65</div>
+					<div class="col-4 amarillonas">A</div>
+					<div class="col-4">3</div>
+				</div>
+				<div class="row">
+					<div class="col-4">66</div>
+					<div class="col-4 amarillonas">A</div>
+					<div class="col-4">2</div>
+				</div>
+				<div class="row">
+					<div class="col-4">67</div>
+					<div class="col-4">68</div>
+					<div class="col-4">1</div>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="row amarillonas">
+					<div class="col-12">
+						<div class="row">
+							<div class="col-6 cuadrau">A</div>
+							<div class="col-6 cuadrau">A</div>
+						</div>
+						<div class="row">
+							<div class="col-6 cuadrau"></div>
+							<div class="col-6 cuadrau"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- FILA FINAL: END -->
+	</div>
+</body>
+
+</html>

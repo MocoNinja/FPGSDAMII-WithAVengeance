@@ -1,0 +1,11 @@
+Para las mierdas estas de la tabla intermedia
+
+El en eñ gridview se puede poner
+DataKeyNames="PeliculaID,ActorID"
+
+Así identifica la clave única compuesta de la tabla intermedia
+
+La condicion pasa a ser
+p => p.PeliculaID == pasado.PeliculaID && p.actorID == pasado.actorID
+
+ojito al AND

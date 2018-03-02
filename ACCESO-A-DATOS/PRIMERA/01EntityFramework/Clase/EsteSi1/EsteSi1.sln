@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EsteSi1", "EsteSi1\EsteSi1.csproj", "{CA1EC63E-56AD-4383-B794-D2DF2613457D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA1EC63E-56AD-4383-B794-D2DF2613457D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA1EC63E-56AD-4383-B794-D2DF2613457D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA1EC63E-56AD-4383-B794-D2DF2613457D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA1EC63E-56AD-4383-B794-D2DF2613457D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {071EA863-73AF-40EA-AC6F-1449E5F54E61}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,16 @@
+﻿@using MiConcesionario.Models
+
+@{
+    ViewBag.Title = "DesplegableManual2";
+}
+
+<h2>DesplegableManual2</h2>
+
+<select id="marcas" name="marcas">
+    @{
+        foreach (Marca Marca in ViewBag.Marcas)
+        {
+            <option value="@Marca.ID">@Marca.Nombre</option>
+        }
+    }
+</select>

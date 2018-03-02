@@ -1,0 +1,51 @@
+El está usando el Microsoft SQL Server Management Studio (el está usando el 2014)
+
+En propiedades de la base de datos, hay una pestaña de permisos, que puede haber que tocar porque a algunos les da problemas.
+
+Se crean tablas (crear Tabla)
+Vamos, que es un maanger tal cual
+
+BBDD Ejemplo
+
+Tabla -> Personas
+	idPersona int nn ai
+	nombre nvarchar50 nn
+	email nvarchar50
+	idGenero int 
+
+Tabla -> Generos
+	idGenero int nn ai
+	nombre nvarchar50 nn
+
+	Esta se crea con consultas SQL
+
+	Create Table Genero
+	(
+		idGenero int NOT NULL Primary Key,
+		genero nvarchar(50) NOT NULL
+	)
+
+
+se meten datos
+
+Para meter la relacion: tabla -> diseño -> campo (en este caso la tabla personas, idGenero -> relaciones) -> agregar -> general -> especificaciones de tabla y columna (o algo asi) y se mete la relacion
+(en este caso la principal es la idGenero de genero y va ligado idPersona de persona)
+
+
+Restricciones: Ejemplo de nuestros generos: que cuando no se especifique, en vez de insertar null, inserte desconocico (id=3)
+consulta:
+
+alter table Persona
+add constraint DF_Persona_idGenero // Esto es el nombre que se se quiera
+default 3 for idGenero
+
+Modificaciones en cascada: si cambiamos la id de un genero, no deja porque hay registros con esa id que quedarian colgando
+En la clave foranea que se ha creado, se le da a modificar -> diseñador de tabla -> especificacion de insert y update.
+EN regla de actualizacion y eliminacion podemos poner varias.
+Ponemos actualizacion en cascada
+
+Autoincrementativos
+
+Se seleciona un campo -> salen debajo solas las propiedades.
+Especificaciñon de identidad -> a sí
+Incremento de la identidad en 1, inicializacion de identidad en 1 -> empezara por 1 e ira sumando de uno en uno

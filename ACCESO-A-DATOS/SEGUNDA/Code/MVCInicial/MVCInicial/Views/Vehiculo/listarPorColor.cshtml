@@ -1,0 +1,61 @@
+﻿@model IEnumerable<MVCInicial.Models.Vehiculo>
+
+@{
+    ViewBag.Title = "listarPorColor";
+}
+
+<h2>listarPorColor</h2>
+     @*
+    ESTO ES LO QUE TENÍA YO ANTES
+    <select name="Lista2" id="Lista2">
+    @foreach (string color in ViewBag.ColorData)
+    {
+        <option value="@color">@color</option>
+    }
+    </select>
+         *@
+<form method="get">
+
+    @Html.DropDownList("color");
+    <input type="submit" value="Buscar" />
+</form>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Matricula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Color)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdSerie)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Matricula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdSerie)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+

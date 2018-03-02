@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<clientes>
+  <cliente>
+    <nif>77777777A</nif>
+    <nombre>Pepe</nombre>
+    <apellidos>PEPE PEPE</apellidos>
+    <direccion>C/ FALSA 1 2 3</direccion>
+    <provincia>50</provincia>
+  </cliente>
+  <cliente>
+    <nif>11111111B</nif>
+    <nombre>Pepa</nombre>
+    <apellidos>PEPa PEPE</apellidos>
+    <direccion>C/ CIERTA 3 2 1</direccion>
+    <provincia>50</provincia>
+  </cliente>
+</clientes>

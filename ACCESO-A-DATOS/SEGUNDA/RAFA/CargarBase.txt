@@ -1,0 +1,25 @@
+select * from MarcaModeloes
+insert into MarcaModeloes values ('Opel')
+insert into MarcaModeloes values ('Nissan')
+insert into MarcaModeloes values ('Peugeot')
+insert into MarcaModeloes values ('Ford')
+
+insert into SerieModeloes (Nom_Serie, MarcaID) values('Zafira',1)
+insert into SerieModeloes (Nom_Serie, MarcaID) values('Silvia',2)
+insert into SerieModeloes (Nom_Serie, MarcaID) values('206',3)
+insert into SerieModeloes (Nom_Serie, MarcaID) values('Focus',4)
+
+insert into Automovils (Matricula, Color, SerieID) values('3456789QWE','Azul',1)
+insert into Automovils (Matricula, Color, SerieID) values('45678GFD','Rojo',1)
+insert into Automovils (Matricula, Color, SerieID) values('4389579ASDAS','Verde',2)
+insert into Automovils (Matricula, Color, SerieID) values('893549DFG','Purpura',2)
+insert into Automovils (Matricula, Color, SerieID) values('56904890OYJ','Amarillo',3)
+insert into Automovils (Matricula, Color, SerieID) values('3456789NVB','Negro',3)
+insert into Automovils (Matricula, Color, SerieID) values('8970893457GDF','Rojo',4)
+insert into Automovils (Matricula, Color, SerieID) values('78900453534FGF','Gris',4)
+
+insert into ExtraModeloes values('Traccion trasera')
+insert into ExtraModeloes values('Techo solar')
+insert into ExtraModeloes values('Navegador')
+insert into ExtraModeloes values('Asientos deportivos')
+insert into ExtraModeloes values('Control de crucero')

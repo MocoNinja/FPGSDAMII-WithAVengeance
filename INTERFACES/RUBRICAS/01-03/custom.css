@@ -1,0 +1,43 @@
+body
+{
+    background-color: black !important;
+    color: greenyellow !important;
+    font-family: 'VT323', monospace !important;
+    font-size: 16pt !important;
+}
+.container{
+    margin-top: 50px;
+}
+
+#forumForm{
+    font-size: 20pt !important;
+    padding-top: 10px;
+    padding-bottom: 50px;
+    margin: auto;
+}
+#fotoMenu{
+    margin-top: 25px;
+    margin-bottom: 45px;
+}
+#logoPIC{
+    width: 105px !important;
+}
+
+.ninja{
+    display: none !important;
+}
+.noninja{
+    display: block !important;
+}
+
+img{
+    width: 315px;
+    padding: 25px;
+}
+
+.hackNews{
+    padding-bottom: 20px !important;
+    padding-top: 20px !important;
+    margin-bottom: 15px !important;
+    margin-top: 20px !important;
+}

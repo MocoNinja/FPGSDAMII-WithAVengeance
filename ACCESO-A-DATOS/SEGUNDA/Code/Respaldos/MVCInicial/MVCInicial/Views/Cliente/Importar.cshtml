@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Importar";
+}
+
+<h2>Importar</h2>
+
+
+@using (Html.BeginForm("Importar", "Cliente", FormMethod.Post))
+{
+    @Html.AntiForgeryToken();
+    @Html.Hidden("NombreArchivo", "XMLClientes.xml");
+    <input type="submit" value="Importar" class="btn btn-default" />
+}
+
+
+

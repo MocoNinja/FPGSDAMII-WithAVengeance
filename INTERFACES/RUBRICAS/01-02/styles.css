@@ -1,0 +1,38 @@
+div{
+    border: 1px solid white;
+}
+
+.rojonas{
+    background-color: red;
+    color:red;
+    font-size: 14px;
+}
+.azulonas{
+    background-color: blue;
+    color:blue;
+    font-size: 14px;
+}
+.verdonas{
+    background-color: lime;
+    color:lime;
+    font-size: 14px;
+}
+.naranjonas{
+    background-color: salmon;
+    color:salmon;
+    font-size: 14px;
+}
+.rosonas{
+    background-color: magenta;
+    color:magenta;
+    font-size: 14px;
+}
+.footerino{
+    font-size: 7px;
+}
+
+@media (max-width: 575px) {
+    .rojonas{
+        display: none;
+    }
+}

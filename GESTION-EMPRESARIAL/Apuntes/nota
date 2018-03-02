@@ -1,0 +1,12 @@
+BEAM: es una nomenclatura
+
+Simplemente eso. Na más. Lo han llamado así porque le salió del cipote. Son las clases que tienen datos.
+.
+Ejemplo con canicas: tenemos roja, azul y negra.
+
+Empezamos a jugar con la roja y la azul. Lo bueno de spring es como un pegamento, y cuando jugamos con la negra, nada impide reutilizar las otras canicas, y la roja y azul puedan trabajar con la negra.
+
+Es decir, idea clave:
+NO hay dos canicas azules. Sólo hay una canica azul, que juega tanto con la roja como con la negra.
+Pero solo hay una canica azul.
+

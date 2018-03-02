@@ -1,0 +1,72 @@
+﻿@model IEnumerable<VistaControlador1.Models.Automovil>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Serie.Marca.Nom_marca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Serie.Nom_Serie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Matricula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Color)
+        </th>
+            
+        <th>
+            @Html.DisplayNameFor(model => model.ExtrasSeleccionados)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Serie.Marca.Nom_marca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Serie.Nom_Serie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Matricula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color)
+            </td>
+            <td>
+                <table  align="center">
+                 
+                            @foreach (var item2 in item.AutoExtras)
+                            {
+
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item2.Extra.TipoExtra)
+                                    </td>
+                                </tr>
+
+                            }
+   
+                </table>
+          </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

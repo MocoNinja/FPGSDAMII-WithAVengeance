@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DibujosAnimadosPrueba1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Generos">
+          <Key>
+            <PropertyRef Name="IDGenero" />
+          </Key>
+          <Property Name="IDGenero" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Series">
+          <Key>
+            <PropertyRef Name="IDSerie" />
+          </Key>
+          <Property Name="IDSerie" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="nvarchar" MaxLength="50" />
+          <Property Name="claseID" Type="int" />
+        </EntityType>
+        <Association Name="FK__Series__claseID__164452B1">
+          <End Role="Generos" Type="Self.Generos" Multiplicity="0..1" />
+          <End Role="Series" Type="Self.Series" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Generos">
+              <PropertyRef Name="IDGenero" />
+            </Principal>
+            <Dependent Role="Series">
+              <PropertyRef Name="claseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DibujosAnimadosPrueba1ModelStoreContainer">
+          <EntitySet Name="Generos" EntityType="Self.Generos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Series" EntityType="Self.Series" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Series__claseID__164452B1" Association="Self.FK__Series__claseID__164452B1">
+            <End Role="Generos" EntitySet="Generos" />
+            <End Role="Series" EntitySet="Series" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DibujosAnimadosPrueba1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Generos">
+          <Key>
+            <PropertyRef Name="IDGenero" />
+          </Key>
+          <Property Name="IDGenero" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Series" Relationship="Self.FK__Series__claseID__164452B1" FromRole="Generos" ToRole="Series" />
+        </EntityType>
+        <EntityType Name="Series">
+          <Key>
+            <PropertyRef Name="IDSerie" />
+          </Key>
+          <Property Name="IDSerie" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="claseID" Type="Int32" />
+          <NavigationProperty Name="Generos" Relationship="Self.FK__Series__claseID__164452B1" FromRole="Series" ToRole="Generos" />
+        </EntityType>
+        <Association Name="FK__Series__claseID__164452B1">
+          <End Role="Generos" Type="Self.Generos" Multiplicity="0..1" />
+          <End Role="Series" Type="Self.Series" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Generos">
+              <PropertyRef Name="IDGenero" />
+            </Principal>
+            <Dependent Role="Series">
+              <PropertyRef Name="claseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DibujosAnimadosPrueba1Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Generos" EntityType="Self.Generos" />
+          <EntitySet Name="Series" EntityType="Self.Series" />
+          <AssociationSet Name="FK__Series__claseID__164452B1" Association="Self.FK__Series__claseID__164452B1">
+            <End Role="Generos" EntitySet="Generos" />
+            <End Role="Series" EntitySet="Series" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DibujosAnimadosPrueba1ModelStoreContainer" CdmEntityContainer="DibujosAnimadosPrueba1Entities">
+          <EntitySetMapping Name="Generos">
+            <EntityTypeMapping TypeName="DibujosAnimadosPrueba1Model.Generos">
+              <MappingFragment StoreEntitySet="Generos">
+                <ScalarProperty Name="IDGenero" ColumnName="IDGenero" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Series">
+            <EntityTypeMapping TypeName="DibujosAnimadosPrueba1Model.Series">
+              <MappingFragment StoreEntitySet="Series">
+                <ScalarProperty Name="IDSerie" ColumnName="IDSerie" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="claseID" ColumnName="claseID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

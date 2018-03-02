@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Menu Principal</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+    </h:head>
+    
+    <h:body>
+        <h:form>                   
+            <p:growl id="messages" showDetail="true" />
+
+            <p:tieredMenu style="width:200px">
+                <p:submenu label="Autores" icon="ui-icon-person">
+                    <p:menuitem value="Listado" outcome="/autores/List" icon="ui-icon-print" />
+                    <p:menuitem value="Sus Libros" outcome="/libros/autorLibros" icon="ui-icon-bookmark" />
+                    <p:menuitem value="Sus Premios" outcome="/autores/autorPremio" icon="ui-icon-star" />
+                </p:submenu>
+
+                <p:separator/>
+
+                <p:submenu label="Libros" icon="ui-icon-bookmark">
+                    <p:menuitem value="Listado" outcome="/libros/List" icon="ui-icon-print" />
+                    <p:menuitem value="Sus Premios" icon="ui-icon-star" />
+                </p:submenu>
+
+                <p:separator/>
+
+                <p:submenu label="Premios" icon="ui-icon-star">
+                    <p:menuitem value="Listado" outcome="/premios/List" icon="ui-icon-print" />
+                    <p:menuitem value="Sus autores" outcome="/premios/premioAutores" icon="ui-icon-person" />
+                    <p:menuitem value="Por Libro" icon="ui-icon-bookmark" />
+                </p:submenu>
+
+                <p:separator/>
+
+                <p:submenu label="Paises" icon="ui-icon-flag">
+                    <p:menuitem value="Listado" outcome="/paises/List" icon="ui-icon-print" />
+                    <p:menuitem value="sus Autores" icon="ui-icon-person" />
+                </p:submenu>
+            </p:tieredMenu>
+        </h:form>        
+    </h:body>
+</html>
+

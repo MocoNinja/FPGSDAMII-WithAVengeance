@@ -1,0 +1,26 @@
+Me ha tocado describir que significa la O del desarrollo 'S.O.L.I.D'
+
+Según lo que he entendido, tiene que ver con afrontar la continua necesidad de implementar nuevas funcionalidades al código, principalmente en forma de nuevas clases, sin tener para ello que tener que modificar para ello una clase o clases para cada nueva adición.
+
+Un ejemplo que se me ocurre es con una base de datos.
+La forma más básica de realizarla, es con la siguiente clase:
+
+Conn.java
+
+public class Conn
+{
+  private String string = "[url de la base de datos]";
+  
+  // Varios métodos para inicializar y cerrar la conexión
+  // Varios métodos para realizar consultas
+}
+
+La propia necesidad del string hace ver que esta clase va a estar diseñada para una base de datos en concreto. Esta implementación requiere que en cada clase que desee realizar consultas, instancie un Conn c = new Conn(); y llame a sus métodos (c.init(); c.executeSql(); c.disconnect(); ...);
+
+El problema que tiene esto es que si se necesita variar ese string y, como se ha explicado en clase, usar una base de datos del tipo de h2, hay que reimplementar todos los métodos, por lo que no está abierta a la EXTENSIÓN.
+
+Si por el contrario, Conn en vez de una clase es una interfaz, podemos tener dos clases distintas: una para la base de datos de producción que se use y otra para la que usemos como desarrolladores.
+En el código, en vez de hacer Conn c = new Conn(); usaremos Conn c = new H2Conn(); o Conn c = new MySQLConn(); Como los métodos están definidos por la interfaz y las clases que implementan a la interfaz tienen los mismos métodos, con cambiar el tipo de objeto instanciado se tiene una u otra funcionalidad.
+Es decir, se habrá EXTENDIDO el programa, sin haber tenido que MODIFICAR el código existente, ya sea cambiado opciones de configuración a mano o llamando a distintos métodos según una serie de condicionales.
+
+En esto se fundamenta 'la O' : abierto a la extensión (podemos cambiar el tipo de base de datos según lo necesitado), cerrado a modificación (sin tener que alterar dinámica o estáticamente el código que ya estaba implementado antes de la nueva necesidad)

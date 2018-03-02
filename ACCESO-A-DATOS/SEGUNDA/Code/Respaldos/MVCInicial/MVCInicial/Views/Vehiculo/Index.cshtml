@@ -1,0 +1,75 @@
+﻿@using MVCInicial.Models;
+
+@model IEnumerable<MVCInicial.Models.Vehiculo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")2
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Matricula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Color)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Serie.Nombre)
+        </th>
+        <th>
+            Extras del Vehículo
+        </th>
+        <th>
+            Operaciones
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Matricula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Color)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Serie.Nombre)
+        </td>
+        <td>
+            <table>
+                @*
+                    EL LO HA HECHO CON EL INCLUDE; ASI QUE HACERLO ASI
+                    @foreach (VehiculosExtras extra in ViewBag.Extras)
+                {
+                    if (item.Id == extra.IdVehiculo)
+                    {
+                        <tr><td>@extra.Extra.TipoExtra</td></tr>
+                    }
+                }
+                    *@
+                
+                @if (item.ExtrasDelVehiculo != null)
+                {
+                    foreach (VehiculosExtras extra in item.ExtrasDelVehiculo)
+                    {
+                        @Html.DisplayFor(modelItem => extra.Extra.TipoExtra)
+                    }
+                }
+                
+            </table>
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

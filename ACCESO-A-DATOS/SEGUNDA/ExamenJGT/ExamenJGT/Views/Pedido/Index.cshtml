@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ExamenJGT.Models.Pedido>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<a href="/Pedido/Create">SI SE ME HA OLVIDADO REDERIGIR ALGUN MAPEO, IR AQUÍ: PEDIDOS</a>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cliente.CIF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaExpedicion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cliente.CIF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaExpedicion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

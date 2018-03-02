@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Hello, world!</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="./custom.css">
+	<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+	 crossorigin="anonymous">
+</head>
+
+<body>
+	<div id="navbarJavi">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01"
+			 aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+				<a class="navbar-brand" href="#">
+					<img id="logoPIC" src="./res/img/doggo_logo.jpg" alt="bestLogoEver!">
+				</a>
+				<ul class="navbar-nav mr-auto mt-2 mt-md-0">
+					<li class="nav-item active">
+						<a class="nav-link" href="./index.html">Home
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+						 aria-expanded="false">
+							Quick Places
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="./posts.html">News</a>
+							<a class="dropdown-item" href="./forum.html">Forums</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="./doggos.html">Offtopic - Relaxin' Doggos</a>
+						</div>
+					</li>
+				</ul>
+				<form class="form-inline my-2 my-lg-0">
+					<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-success my-2 my-sm-0 bg-warning" id="decepcionante" type="submit">Search</button>
+				</form>
+			</div>
+		</nav>
+	</div>
+	<div class="container">
+        <div class="row">
+                <div class="media col-12 col-sm-6 text-justify hackNews">
+                    <div class="media-body">
+                      <h5 class="mt-0 mb-1 text-center hackNews">Data Leak</h5>
+                        NeoTokyo industries hacked by famous shadowrunner group. Millions of pbytes of data leaked to netspace.
+                    </div>
+                    <img class="ml-3" src="./res/img/news1.jpg" alt="thisisthenews">
+                  </div>
+                  <div class="media col-12 col-sm-6 text-justify hackNews  ">
+                    <div class="media-body">
+                      <h5 class="mt-0 mb-1 text-center hackNews">Riots</h5>
+                      A strike of non-augmented workers has ended in a violent firefight. The body count is yet unknown.
+                    </div>
+                    <img class="ml-3" src="./res/img/news2.jpg" alt="thisisthenews">
+                  </div>
+                  <div class="media col-12 col-sm-6 text-justify hackNews  ">
+                    <div class="media-body">
+                      <h5 class="mt-0 mb-1 text-center hackNews">aiBook Relesead</h5>
+                      The inmense cretino's megacorp has released its new product. Cues of billions of citizens have been reported. The lack of stock has led to several violent incidents.
+                    </div>
+                    <img class="ml-3" src="./res/img/news3.jpg" alt="thisisthenews">
+                  </div>
+                  <div class="media col-12 col-sm-6 text-justify hackNews  ">
+                    <div class="media-body">
+                      <h5 class="mt-0 mb-1 text-center hackNews">aiBook Cracked!</h5>
+                      The (in)famous group R4z3r was able to compromise cretino's megacorp device in a matter of hours. Besides the leaked data, several high-profile users have been hacked. The lack of barries rendered
+                      the hackers able to access confidential data in their brains. The few survivos are in critical condition.
+                    </div>
+                    <img class="ml-3" src="./res/img/news4.jpg" alt="thisisthenews">
+                  </div>
+            </div>
+        </div>
+	</div>
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+	 crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+	 crossorigin="anonymous"></script>
+	 <script>
+		 $(document).ready(function(){
+			$("#decepcionante").click(function(){
+				alert("Sorry, not implemented yet!");
+			});
+			$("#logoPIC").click(function(){
+				$(this).hide().slideDown(3000);
+			});
+		 });
+	 </script>
+</body>
+
+</html>

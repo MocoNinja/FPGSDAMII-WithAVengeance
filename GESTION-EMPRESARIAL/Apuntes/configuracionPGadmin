@@ -1,0 +1,10 @@
+Va a haber que tocar un par de archivos de configuración para habilitar la conexión remotea.
+/etc/postresql*/main/pg_hba.conf
+
+hay que descomentar/Añadir:
+(buscar remote access postresql)
+blog.binary.com//2016/01/23/configure-postresql-to-allow-remote-connection.html
+
+También hay que tocar el postgresql.conf del mismo directorio.
+
+Hay que cambiar lo de listen_addresses="localhost" por un * para que coja las remotas también

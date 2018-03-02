@@ -1,0 +1,43 @@
+﻿@model MVCInicial.Models.Vehiculo
+
+@{
+    ViewBag.Title = "FiltradoCompleto";
+}
+
+<h2>FiltradoCompleto</h2>
+
+<div>
+    <h4>Vehiculo</h4>
+    <hr />
+    <form method="get" name="Id" onchange="submit()">
+        <h1>
+            MARCAS
+            @Html.DropDownList("DespegableMarcas", "--Macarrones--")
+        </h1>
+        <hr />
+        <h1>
+            MODELOS
+            @Html.DropDownList("DesplegableSeries", "--Macarrones--")
+        </h1>
+        <input type="submit" value="FiltradoCompleto" />
+    </form>
+
+
+    <hr />
+
+    <table>
+
+@foreach (var item in ViewBag.SusVehiculos)
+{
+    <tr>
+        <td>
+           @item.Matricula
+        </td>
+        <td>
+            @item.Color
+        </td>
+    </tr>
+}
+    </table>
+
+</div>

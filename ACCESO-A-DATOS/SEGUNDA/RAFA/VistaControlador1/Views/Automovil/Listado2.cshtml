@@ -1,0 +1,41 @@
+﻿@model IEnumerable<VistaControlador1.Controllers.AutomovilController.AutomovilTotal>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nom_marca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nom_serie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Matricula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Color)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nom_marca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nom_serie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Matricula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color)
+            </td>
+        </tr>
+    }
+
+</table>

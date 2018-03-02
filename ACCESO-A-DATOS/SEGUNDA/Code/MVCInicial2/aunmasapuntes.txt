@@ -1,0 +1,4 @@
+Ahora vamos a ahcer el listado (simple, solo con los datos), y los vamos a sacar con un objeto de la clase WebGrid.
+Este objeto es similar al GridView.
+
+Yo he buscado por codigo. El se va a cargar el campo de ID y va a usar el código como clave

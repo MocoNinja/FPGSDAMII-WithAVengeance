@@ -1,0 +1,1 @@
+En las imágenes se adjuntan pantallazos en los que se ilustra como, despues de haber instalado las dependencias en la rubrica anterior, así como algunas nuevas y comprobando la existencia de un usuario en postrgre, se ejecuta odoo del repositorio clonado de github.

@@ -1,0 +1,20 @@
+Vino
+
+Id, nombre, precio, IdBodega
+
+Bodega
+
+Id, nombre
+
+Cliente
+
+Id, nombre, apellidos
+
+Compra
+
+Id, fecha, IdCliente
+
+DetalleCompra
+
+IdCompra, IdVino, Precio, Unidades (el precio es el historico del vino: lo lee de la tabla y lo guarda)
+

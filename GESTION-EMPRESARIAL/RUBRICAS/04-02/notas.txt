@@ -1,0 +1,4 @@
+En la rúbrica '1' de Odoo, pasar de todo lo relativo a controladores!!!
+En el models.py, el _name es la carpeta que creará
+En Python, la diferencia entre variable y _variable, es que esta última es privada.
+El ir.model.access.csv se pone, pero no lo vamos a usar

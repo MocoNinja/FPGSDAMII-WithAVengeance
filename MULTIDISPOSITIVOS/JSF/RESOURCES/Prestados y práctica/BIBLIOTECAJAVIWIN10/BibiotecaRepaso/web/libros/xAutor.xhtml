@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="Libros según el autor"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:selectOneMenu id="librosAutor" value="#{librosController.elAutor}"
+                                 valueChangeListener="#{librosController.obtenerLibrosAutos()}">
+                    <f:selectItems value="#{autoresController.getItemsAvailableSelectOne()}" />
+                </h:selectOneMenu>
+                <h:commandButton value="Selecciona" action="#{librosController.obtenerLibrosAutos()}"/>
+            </h:form>
+
+            <h:form styleClass="jsfcrud_list_form" style="width: 60%">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:panelGroup rendered="#{librosController.items.rowCount > 0}">
+                    <h:outputText value="#{librosController.pagination.pageFirstItem + 1}..#{librosController.pagination.pageLastItem + 1}/#{librosController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{librosController.previous}" value="#{bundle.Previous} #{librosController.pagination.pageSize}" rendered="#{librosController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{librosController.next}" value="#{bundle.Next} #{librosController.pagination.pageSize}" rendered="#{librosController.pagination.hasNextPage}"/>&nbsp;
+                    <p:dataTable var="item" value="#{librosController.susLibros}" rows="10"
+                                 paginator="true"
+                                 paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                                 rowsPerPageTemplate="5,10,15">
+                        <p:column headerText="Cód." width="50" style="text-align: center" sortBy="#{item.codLibro}">
+                            <h:outputText value="#{item.codLibro}" />
+                        </p:column>
+                        <p:column headerText="Nombre" sortBy="#{item.nomLibro}">
+                            <h:outputText value="#{item.nomLibro}" />
+                        </p:column>
+                        <p:column headerText="Autores" >
+                            <h:selectManyListbox id="losautores" style="width: 200px; border:none; font-size: small;" disabled="true">
+                                <f:selectItems value="#{item.autoresList}" var="escritores" itemValue="#{escritores}" itemLabel="#{escritores.nomAutor} #{escritores.apellido1} #{escritores.apellido2} " />
+                            </h:selectManyListbox>
+                        </p:column>      
+                        <p:column headerText="Premios" >
+                            <h:selectManyListbox id="lospremios" size="2" style="overflow-y:scroll; width: 200px; border:none; font-size: small;" disabled="true">
+                                <f:selectItems value="#{item.premiosList}" var="premio" itemValue="#{premio}" itemLabel="#{premio.nomPremio} " />
+                            </h:selectManyListbox>
+                        </p:column>  
+                        <p:column headerText="pelicula" width="60" style="text-align: center">
+                            <p:graphicImage library="iconos" name="trailer.png" height="35" id="icono" style="display: #{librosController.mostrarPelicula(item)}"/>
+                        </p:column> 
+                        <p:column headerText="Año" sortBy="#{item.ano}">
+                            <h:outputText value="#{item.ano}" />
+                        </p:column>
+                        <p:column headerText="Portada" style="text-align: center">
+                            <p:lightBox styleClass="imagebox" id="lighbox1">  
+                                <h:outputLink  value="/Proyecto1/faces/javax.faces.resources/#{item.portada}?ln=Portadas" title="#{item.nomLibro} "> 
+                                    <h:graphicImage library="portadas" name="#{item.portada}" height="45" />
+                                </h:outputLink>
+                            </p:lightBox>   
+                        </p:column>
+                    </p:dataTable>       
+
+                </h:panelGroup>
+                
+            </h:form>
+            <p:galleria value="#{librosController.susLibros}" var="image" panelWidth="250" panelHeight="400" showCaption="true" style="float: right; margin-right: 70px">
+                <p:graphicImage library="portadas" name="#{image.portada}" title="#{image.ano}"></p:graphicImage>
+            </p:galleria>
+        </ui:define>
+    </ui:composition>
+
+</html>

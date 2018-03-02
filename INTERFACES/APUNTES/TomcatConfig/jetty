@@ -1,0 +1,9 @@
+sudo apt install maven
+sudo apt install jetty // NO me ha hecho falta. Lo he desintalado y ha tirado igual de bien o mejor -> no instalar
+
+He parado el tomcat y me he bajado h2 y he ejecutado el build.sh
+(Lo del h2 parece no hacer falta según dicen; lo del tomcat es imperativo)
+
+mvn jetty:run -DskipTests=true
+
+(en el directorio del codigo)

@@ -1,0 +1,27 @@
+Ejercicio examen
+
+Desplegable de paises
+Al seleccionar uno, que salgan los actores de ese país
+
+Cosas nuevas
+
+* 
+	from x in tabla
+	where campo==algo <-- si queremos sacar algo
+
+*
+	select x <--- para no complicarnos con nombres y mierdas
+
+EN repo paises
+
+List<Actor> getActores (int cofigoPais)
+{
+	consulta sql (del estilo from x in tabla)
+	resultado.toList();
+	return lalista;
+}
+
+AutoPostBack=true;
+
+
+Nota: el lo ha hecho seleccionando form en vez de control al sellecionar el origen de datos en el object data source, pasando la id del dropwdownlist

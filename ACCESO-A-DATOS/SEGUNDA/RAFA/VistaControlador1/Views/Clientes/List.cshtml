@@ -1,0 +1,16 @@
+﻿@model IEnumerable<VistaControlador1.Models.Clientes>
+
+
+
+@{
+    ViewBag.Title = "Clientes";
+    WebGrid grid = new WebGrid(Model);
+}
+<h2>Personas</h2>
+@grid.GetHtml(columns: new[] {
+    grid.Column("NIF"),
+    grid.Column("Apellidos"),
+    grid.Column("Nombre"),
+    grid.Column("Direccion"),
+    grid.Column("ProvinciaID"),
+})

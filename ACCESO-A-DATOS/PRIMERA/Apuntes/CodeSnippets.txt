@@ -1,0 +1,25 @@
+=== Connection String ===
+
+  <connectionStrings>
+    <add name="ObjetoBaseDatos" connectionString="server=ruta\SQLEXPRESS; Database=Nombre ;Integrated Security=True" providerName="System.Data.SqlClient" />
+  </connectionStrings>
+
+=== DataBind DropDown ===
+<asp:DropDownList Text='<%# Bind("PaisID") %>' ID="DropDownList1" runat="server" DataSourceID="datosPaises" DataValueField="ID" DataTextField="Nom_Pais" />
+
+=== Cosas Rarunas Agustín ===
+
+== ** El aspx.cs ** ==
+((System.Web.UI.WebControls.TextBox)DetailsView1.FindControl("PeliInsertar")).Text = PeliSeleccionada.SelectedValue;
+
+== ** Su template correspondiente ** ==
+<asp:TextBox ID="PeliInsertar" runat="server" Text='<%# Bind("PeliculaID") %>'></asp:TextBox>
+
+
+== ** Me cago en dios ** ==
+
+protected override void OnModelCreating ( DbModelBuilder modelBuilder)
+{
+	modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+	modelBuilder.Entity<Actor>().MapToStoredProcedures(); --> cosa rara
+}

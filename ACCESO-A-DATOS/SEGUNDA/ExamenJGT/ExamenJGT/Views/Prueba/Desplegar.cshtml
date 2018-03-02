@@ -1,0 +1,29 @@
+﻿@model ExamenJGT.Models.ClasePrueba
+
+@{
+    ViewBag.Title = "Desplegar";
+}
+
+<h2>Desplegar</h2>
+
+<form method="get">
+    @Html.DropDownList("Objetos");
+    <button type="submit">Enviar</button>
+</form>
+<div>
+    <h4>ClasePrueba</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Mensaje)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mensaje)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<MVCInicial.Models.Vehiculo>
+
+@{
+    ViewBag.Title = "Busqueda";
+}
+
+<h2>Busqueda</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Matricula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Color)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdSerie)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Matricula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Color)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Serie.Nombre)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+    <h1>ENCUENTRA UN COCHE</h1>
+    <hr />
+    <form method="get" name="cochechico">
+        <label for="matricula">Matrícula: </label>
+        <input type="text" value="" name="busca" placeholder="Introduce la matrícula" />
+        <br />
+        <input type="submit" value="BUSCA" />
+    </form>
+
+    <form method="get" name="cochechico">
+        <input type="search" value="" name="busca" hidden placeholder="Introduce la matrícula" />
+        <input type="submit" value="VOLVER" />
+    </form>
+
+</table>

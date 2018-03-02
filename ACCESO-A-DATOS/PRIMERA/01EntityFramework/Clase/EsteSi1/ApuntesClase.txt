@@ -1,0 +1,112 @@
+﻿******************************************************************************************************
+***** Usando entity framework 5 para generar los modelos a partir de una base de datos existente *****
+******************************************************************************************************
+
+Vamos a usar un framework (entity)
+
+Vamos a sacar en un gridview el contenido de dos tablas, relacionadas por departamentos
+
+Sacará información de alumnos por departamentos, con la relación de clases
+
+- Crear tablas
+- Relacionarlas
+- Importarlas con el framework -> tenemos el modelo
+
+Create table Clases(
+	ID int primary key identity,
+	curso nvarchar(2),
+)
+
+Create table Alumnos(
+	ID int primary key identity,
+	nombre nvarchar(50),
+	Apellidos nvarchar(50),
+	Genero nvarchar(50),
+	edad int,
+	claseID int foreign key references Clases(ID)
+)
+
+Esta relacion es fundamental para generar el codigo luego!!
+
+el identity lo coge como autoincrementativo
+
+Insert into Clases values ('1H');
+Insert into Clases values ('2H')
+Insert into Clases values ('1E');
+Insert into Clases values ('2E');
+
+SELECT * FROM Clases;
+
+NOTA: al meter datos en alumnos, no me ha dejado por comandos
+No reconocio insert into alumnos
+parece que reconoce Colegio.dbo.Alumnos
+
+----
+VS
+
+Creamos proyecyo y en el proyecto click derecho agregar elemento modelos de datos -> Datos -> ADO.NET Entity Data....
+
+Vamos a crear solo el modelo con la esctrutura y datos que hemos hecho con el sql server antes
+
+El nombre que pide es el del directorio, donde mete los modelos
+
+Elefir contenido del modelo -> EF Designer desde la base de datos
+
+Hay que conectarse al SQL Server meter el WINDEV/SQLEXPRESS (o lo que ponga en el designer) y de ahi me ha cogio la base colegio en un desplegable
+
+----
+
+Cuando se ha guardado sale algo de App.Config
+
+Hasta ahora: base de datos en access. Si queriamos acceder, metiamos el rollo de microsft jey para acceder a la misma base todo el rato.
+
+Ese string con la conexion se puede guardar en una variable y meterlo en ese archivo ->
+	podremos usar esa variable para iniciar esa conexion en vez de tener que meter todo eso a mano
+
+Se han creado los objetos del modelo y tal
+
+---
+
+Volvemos a hacer click dcho y creamos un nuevo elemento -> una página web
+
+Ha sido caotico. He reslatado el form1.cs; he creado un nuevo archivo -> web form -> lo he giardado a pezuña en el directorio raiz de la solucion 
+
+___
+
+Viernes
+Con toda esa mierda -> metemos un gridview para sacar esos datos
+
+Recordar que antes rescatabamos los datos en otro objeto, y vinculamos el gridview a este. Este objeto ahora es de la clase EntityDataSource.
+
+Vamos ala pestañita de Diseño y podemos maquear el gridview solito con colores y pollas
+
+EN el app config se genero el connectionstring. tiene un name. Pues en el asp, en el daata spurce, le pone el connectionstring con ese nomrne.
+No funciona muy bien, así que se mete a mano
+EntitySetName: el nombre de la tabla Clas : NOTAR: dentro tiene tambien a los alumnso
+Select: la consulta de seleccion
+
+
+No rula porque está ejecutando la ventanita de c#
+
+Va a dar una aclaración que iba a dar más tarde
+
+.cs -> código C# -> el que hace todo por detrás
+En el MVC -> C# es el controlador, que manda sobre las vistas que son las páginas .aspx
+
+Surrender: hacemos nuevo siio web pa que rule
+Solucion -> click dcho -> agregar -> nuevo sitio web -> web fors
+
+SURRENDER TOTAL
+
+Va a empezar desde 0
+
+Nuevo proyecto C# Visual -> Web Forms -> ASPWeb
+
+Sin MVC!!
+
+Cuando esta creado, en el proyecto -> click dcho -> agregar -> datos -> ADO.NET Entity Data model -> desde base de datos
+Poner la version 5 del entity que si no no rula y a mi no me ha dejado cambiarla
+
+Se pueden instalar mierdas en herramientas -> administrador de paquetes nuget
+
+Aun asi no rula -> esa repitiendo el codigo de antes

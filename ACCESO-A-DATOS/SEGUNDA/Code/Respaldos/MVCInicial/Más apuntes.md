@@ -1,0 +1,1 @@
+Ejercicio: En el listado de vehículos vamos a sacar el campo con los extras que tienen. Los extras tienen que salir dentro de una tabla.

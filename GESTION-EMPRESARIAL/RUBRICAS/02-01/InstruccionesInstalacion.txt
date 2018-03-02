@@ -1,0 +1,25 @@
+Tras los problemas comentados en clase, se ha podido instalar el paquete deb de Odoo en Ubuntu 16.04 mediante:
+
+1) La instalación de los siguientes paquetes: 
+
+sudo apt-get install graphviz ghostscript postgresql-client \   
+python-dateutil python-feedparser python-matplotlib \
+python-ldap python-libxslt1 python-lxml python-mako \
+python-openid python-psycopg2 python-pybabel python-pychart \
+python-pydot python-pyparsing python-reportlab python-simplejson \
+python-tz python-vatnumber python-vobject python-webdav \
+python-werkzeug python-xlwt python-yaml python-imaging gcc python-dev mc bzr python-setuptools python-babel \
+python-feedparser python-reportlab-accel python-zsi python-openssl \
+python-egenix-mxdatetime python-jinja2 python-unittest2 python-mock \
+python-docutils lptools make python-psutil python-paramiko poppler-utils \
+python-pdftools antiword postgresql
+
+2) Ejecutando dpkg -i 
+3) Haciendo un apt install -f (para remover odoo e instalar las últimas dependencias)
+4) Ejecutando finalmente el dpkg -i
+
+En la imagen adjunta puede verse que el paquete .deb ha sido instalado correctamente2) Ejecutando dpkg -i 
+3) Haciendo un apt install -f (para remover odoo e instalar las últimas dependencias)
+4) Ejecutando finalmente el dpkg -i
+
+En la imagen adjunta puede verse que el paquete .deb ha sido instalado correctamente

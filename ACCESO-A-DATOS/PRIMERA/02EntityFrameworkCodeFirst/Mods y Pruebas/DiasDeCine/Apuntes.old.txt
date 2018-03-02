@@ -1,0 +1,25 @@
+Error: el no ha creado nada en el sql server, asi que no debo importar el modelo
+asi que debo hacer la connectin sgtring a mano
+
+<connectionString>
+<add name="MyDBContext"
+	connectioNStr
+>
+
+
+Que me ha petado, no sgo
+
+Pero en el formulario de actores hay que tener dos object data source
+(uno de datos y otro de paises)
+
+el details view saca los datos de datosActores (uno de los data source)
+
+En este details view, tenemos nombre, apellidos y paisID. Queremos el desplebalge en paisID
+
+Vamos a sus propiedades, editar, campos. QUeremos que paisID no sea un BoundField, sino un template (hay un link abajo a la derecha que pone de vonvertir)
+
+Al ver el codigo se ve que ha cambiado y que ha creado tres posibilidades.
+Vamos a carganors dos, porque solo queremos un modo de verlo, el ItemTemplate
+Ahi ponemos un dropdownlist. Le ponemos el DataSourceID="datosPaises" (el id del object data source)
+Hay que poner la propiedad DataValueField="ID" (es el nombre del campo que uda como dato) 
+y DataTextField="NombrePais" (el que muestras)

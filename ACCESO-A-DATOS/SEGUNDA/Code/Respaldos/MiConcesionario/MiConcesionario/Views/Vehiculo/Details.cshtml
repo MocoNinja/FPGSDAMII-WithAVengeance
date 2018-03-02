@@ -1,0 +1,42 @@
+﻿@model MiConcesionario.Models.Vehiculo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Vehiculo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Serie.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Serie.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Matricula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Matricula)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Color)
+        </dt>
+
+        <dt>
+            @Html.ListBoxFor(model => model.ExtrasID, new MultiSelectList(ViewBag.Extras, "Value", "Text"), htmlAttributes: new { @class = "control-label col-md-2" }) 
+        </dt>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

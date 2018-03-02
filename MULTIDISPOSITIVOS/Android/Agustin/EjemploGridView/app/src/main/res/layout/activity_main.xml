@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.asole.ejemplogridview.MainActivity">
+
+    <TextView
+        android:id="@+id/lblMensaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selecciona una opción : " />
+
+    <GridView
+        android:id="@+id/gridOpciones"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="auto_fit"
+        android:columnWidth="80px"
+        android:horizontalSpacing="5px"
+        android:verticalSpacing="10px"
+        android:stretchMode="columnWidth"/>
+
+
+</LinearLayout>

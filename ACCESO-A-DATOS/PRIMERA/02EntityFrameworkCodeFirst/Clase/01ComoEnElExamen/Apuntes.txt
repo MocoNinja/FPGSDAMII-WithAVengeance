@@ -1,0 +1,40 @@
+Ejercicio guapo que ya es lo que entrara en el examen
+
+Vamos a crear las entidades nosotros
+
+Vamos a crear dos clases:
+
+Solucion -> click dcho -> agregar -> clase (abajo del todo)
+
+Nota: agregar el entity framework. Se mete de datos: EF 5x ... Generator ->
+	así se puede importar el System.Data.Entity
+	así nuestra clase puede extender a DBContext
+
+Cuando creamos ese repo, hay que meter la conexion en el Web.config
+Hay que mter la marca <connectionString></conn..> en <configuration>, debajo de <configSections> y encima de <system.web>
+
+el server=. me lo ha entendido, pero hay gente a la que no
+así que se puede poner server=WINDEVVM\SQLEXPRESS o similar
+
+Edit: al poner la linea esa vista en als ultimas imagenes, he tenido que hacer este cambio porque me tiraba excepcion
+
+Edit: todo eso no ha funcionado al final porque ese include hace que busque alumnoes
+
+Explicacion
+
+Al prepararse para la base de datos, si la base existe lee de ahi y si no la crea.
+El dice que borrar, yo la renombro.
+A mi nom e ha funcionado a el si. Le ha creado la bbdd Colegio con la tabla dbo.Alumnoes y dbo.Clases
+
+
+No me rula, repetir que los pasos son esos!!
+
+
+Cosas a probar
+
+EN alumno.cs
+
+antes de la clase
+
+se puede poner [Table("tblAlumnos")]
+lo propio con [Column] encima de cada atributo dentro de la clase
