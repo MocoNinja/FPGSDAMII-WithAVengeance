@@ -1,3 +1,0 @@
-insert into alumnos(nom_alumno, foto, sonido) values("Diego Abad", "abad", "abad");
-insert into alumnos(nom_alumno, foto, sonido) values("Lydia Abril", "abril", "abril");
-insert into alumnos(nom_alumno, foto, sonido) values("Inaki Aguilar", "aguilar", "aguilar");

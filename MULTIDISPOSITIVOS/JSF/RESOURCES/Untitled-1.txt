@@ -1,5 +1,0 @@
-Hacer en detalles de autor una pagina con el nombre, la badnera y la foto, que abajo ponga la bio y a la derecha salga la portada y comentario de sus libros. Esto debe ser de un objetio de primeraces de <p:accordionPanel value=fuenteDeDatos
-
-
-
-Contraseña de la bolsa de empleo: trello/slack

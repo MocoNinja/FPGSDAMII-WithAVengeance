@@ -1,3 +1,0 @@
-INSERT INTO alumnos(nom_alumno, foto, sonido) VALUES ("Pepa", "pepa", "pepe");
-INSERT INTO alumnos(nom_alumno, foto, sonido) VALUES ("Pepa", "pepa", "pepa");
-INSERT INTO alumnos(nom_alumno, foto, sonido) VALUES ("Juanñañaña", "juan", "juan");
